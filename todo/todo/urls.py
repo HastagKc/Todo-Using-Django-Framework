@@ -22,5 +22,5 @@ from base.views import home, create
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", home, name="home"),
-    path("create/", create),
+    path("create/", create, name="create"),
 ]

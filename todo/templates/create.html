@@ -8,6 +8,7 @@
     <title>Create Page</title>
   </head>
   <body>
+    {% include 'nav_bar.html' %}
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -15,16 +16,16 @@
             {% csrf_token %}
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" />
+              <input type="text" class="form-control" id="name" name="name" required />
             </div>
 
             <div class="mb-3">
               <label for="description" class="form-label">Description</label>
-              <textarea class="form-control" id="description" name="description"></textarea>
+              <textarea class="form-control" id="description" name="description" required></textarea>
             </div>
             <div class="mb-3">
               <label for="status" class="form-label">Status</label>
-              <select class="form-select" aria-label="Default select example" id="status" name="status">
+              <select class="form-select" aria-label="Default select example" id="status" name="status" required>
                 <option value="Complete">Complete</option>
                 <option value="Not Complete">Not Complete</option>
                 <option value="In Progress">In Progress</option>
