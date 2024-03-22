@@ -2,10 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todo
 
-# Import necessary modules
-from django.shortcuts import render
-from .models import Todo
-
 
 # Define the view function for the homepage
 def home(request):

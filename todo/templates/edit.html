@@ -21,17 +21,26 @@
 
             <div class="mb-3">
               <label for="description" class="form-label">Description</label>
-              <textarea class="form-control" id="description" name="description" required></textarea>
+              <textarea class="form-control" id="description" name="description" required>{{ todo.description }}</textarea>
             </div>
             <div class="mb-3">
               <label for="status" class="form-label">Status</label>
               <select class="form-select" aria-label="Default select example" id="status" name="status" required>
-                <option value="Complete">Complete</option>
-                <option value="Not Complete">Not Complete</option>
-                <option value="In Progress">In Progress</option>
+                {% if todo.status == 'Complete' %}
+                  <option value="Complete" selected>Complete</option>
+                  <option value="Not Complete">Not Complete</option>
+                  <option value="In Progress">In Progress</option>
+                {% elif todo.status == 'Not Complete' %}
+                  <option value="Complete">Complete</option>
+                  <option value="Not Complete" selected>Not Complete</option>
+                  <option value="In Progress">In Progress</option>
+                {% else %}
+                  <option value="Complete">Complete</option>
+                  <option value="Not Complete">Not Complete</option>
+                  <option value="In Progress" selected>In Progress</option>
+                {% endif %}
               </select>
             </div>
-
             <button type="submit" class="btn btn-primary">Edit</button>
           </form>
         </div>
