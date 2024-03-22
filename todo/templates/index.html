@@ -17,6 +17,7 @@
           <th scope="col">Task</th>
           <th scope="col">Description</th>
           <th scope="col">Status</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +27,10 @@
             <td>{{ todo.name }}</td>
             <td>{{ todo.description }}</td>
             <td>{{ todo.status }}</td>
+            <td>
+              <a href="/edit/{{ todo.id }}"><button type="button" class="btn btn-warning">Edit</button></a>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
           </tr>
         {% endfor %}
       </tbody>

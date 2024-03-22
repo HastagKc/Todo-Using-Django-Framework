@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from base.views import home, create
+from base.views import home, create, edit
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", home, name="home"),
     path("create/", create, name="create"),
+    path("edit/<int:pk>/", edit, name="edit"),
 ]

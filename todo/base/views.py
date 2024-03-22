@@ -29,3 +29,10 @@ def create(request):
         Todo.objects.create(name=name, description=description, status=status)
         return redirect("home")
     return render(request, "create.html")
+
+
+# defining the view for edit page
+def edit(request, pk):
+    todo = Todo.objects.get(id=pk)
+    content = {"todo": todo}
+    return render(request, "edit.html", context=content)
